@@ -1,0 +1,2 @@
+# Blog
+Logcat of Thinking
