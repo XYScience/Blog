@@ -1,6 +1,6 @@
 # Android 零碎知识
 
-####1，adb 隐藏系统栏 
+#### 1，adb 隐藏系统栏 
 immersive.full：全屏
 immersive.status：隐藏状态栏
 immersive.navigation：隐藏导航栏
@@ -21,9 +21,7 @@ immersive.navigation：隐藏导航栏
   adb shell settings put global policy_control null
   ```
 
-
-
-####2，FileProvider 
+#### 2，FileProvider 
 
 对于面向 Android 7.0 的应用，Android 框架执行的 [StrictMode](https://link.jianshu.com?t=https://developer.android.com/reference/android/os/StrictMode.html)API 政策禁止在您的应用外部公开 file:// URI。如果一项包含文件 URI 的 intent 离开您的应用，则应用出现故障，并出现 FileUriExposedException 异常 。
 * 最简单粗暴的就是将 targetSdkVersion 改成24以下（RE管理器就是23）
@@ -38,7 +36,7 @@ immersive.navigation：隐藏导航栏
 >[FileProvider](https://developer.android.com/reference/android/support/v4/content/FileProvider.html)
 
 
-####3，同一 Activity 的多个实例以任务的形式显示在概览屏幕中
+#### 3，同一 Activity 的多个实例以任务的形式显示在概览屏幕中
 
 * 仅仅设置Intent.[FLAG_ACTIVITY_NEW_DOCUMENT](https://developer.android.com/reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_DOCUMENT)，系统将 Activity 视为新任务显示在概览屏幕中；当主 Activity 启动新 Activity 时，系统会搜遍现有任务，看看是否有任务的 Intent 与 Activity 的 Intent 组件名称和 Intent 数据（`intent.setData()`）相匹配。 如果未找到任务，则会以该 Activity 作为其根创建新任务。如果找到的话，则会将该任务转到前台并将新 Intent 传递给 onNewIntent() 。
 * 当一起设置 Intent.[FLAG_ACTIVITY_NEW_DOCUMENT](https://developer.android.com/reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_DOCUMENT)
@@ -58,7 +56,7 @@ activity.overridePendingTransition(R.anim.slide_right_in, R.anim.slide_left_out)
 >[概览屏幕](https://developer.android.com/guide/components/recents.html)
 
 
-####4，更改最近任务列表的 Title、Icon 和 Color
+#### 4，更改最近任务列表的 Title、Icon 和 Color
 
 ```java
 TaskDescription td = new TaskDescription(mTitle, mIcon, mColor);
@@ -66,7 +64,7 @@ activity.setTaskDescription(td);
 ```
 
 
-####5，系统状态栏导航栏相关
+#### 5，系统状态栏导航栏相关
 
 ```java
 // Android 5.0+ 全屏显示 
@@ -111,9 +109,7 @@ getWindow().setNavigationBarColor(ContextCompat.getColor(this, android.R.color.w
 
 ```
 
-
-
-####6，16进制颜色透明度动态
+#### 6，16进制颜色透明度动态
 ```Java
 /** Adds alpha to a hex color
   * @param originalColor color, without alpha
@@ -131,7 +127,7 @@ fun getColorWithAlpha(originalColor: String, alpha: Double): String {
 ```
 
 
-####7，RecyclerView恢复浏览位置
+#### 7，RecyclerView恢复浏览位置
 
 ```java
 // 要恢复的界面的第一条 item 位置
@@ -149,7 +145,7 @@ layoutManager.scrollToPositionWithOffset(position, top)
 >[RecyclerView恢复浏览位置一些事](https://www.jianshu.com/p/f6c63a59d511)
 
 
-####8，java.lang.ExceptionInInitializerError异常
+#### 8，java.lang.ExceptionInInitializerError异常
 
 此异常是 **静态初始化程序中发生意外异常的信号**
 ```java
@@ -168,18 +164,14 @@ public class A{
 **解决：**解决此错误只需要将上面静态变量定义的位置对换一下就可以了。
 **注意：**因为 ExceptionInInitializerError 导致了类无法加载，由于类加载失败了，因此JVM会抛出 NoClassDefFoundError ，在分析 NoClassDefFoundError 的原因，最好看下日志文件中有没有 ExceptionInInitializerError ，然后再考虑要不要检查 classpath。
 
-
-
-####9，从demens.xml文件获取长度值
+#### 9，从demens.xml文件获取长度值
 
 getDimension()、getDimensionPixelSize()和getDimenPixelOffset()的结果值都是实际像素值px；
 getDimension()：返回实际数值；
 getDimensionPixelSize()：返回的是实际数值的四舍五入；
 getDimensionPixelOffset()：返回的是实际数值去掉后面的小数点。
 
-
-
-####10，View随ScrollView滑动透明度变化
+#### 10，View随ScrollView滑动透明度变化
 
 ```java
 public class TranslucentScrollView extends ScrollView {
@@ -221,9 +213,7 @@ public class TranslucentScrollView extends ScrollView {
 ```
 也可以使用CoordinatorLayout配合layout_behavior实现
 
-
-
-####11，ScrollView嵌套RecyclerView滑动冲突
+#### 11，ScrollView嵌套RecyclerView滑动冲突
 
 简单方法一：
 ```java
@@ -236,7 +226,7 @@ LinearLayoutManager manger = new LinearLayoutManager(getActivity()){
 ```
 
 
-####12，RecyclerView使用LinearLayoutManager时，item的match_parent不起作用
+#### 12，RecyclerView使用LinearLayoutManager时，item的match_parent不起作用
 
 解决方法：
 `View itemView = inflater.inflate(R.layout.item_swipe_layout, parent, false);`
@@ -259,7 +249,7 @@ if (root != null) {
 ```
 
 
-####13，自绘形状的水波纹
+#### 13，自绘形状的水波纹
 
 ```xml
 //btn_ripple.xml
@@ -287,7 +277,7 @@ if (root != null) {
 ```
 
 
-####14，SpannableStringBuilder单TextView多样式
+#### 14，SpannableStringBuilder单TextView多样式
 
 ```Java
 //添加文字删除线
@@ -306,9 +296,7 @@ textView.setText(getStrikethroughString("测试文字"));
 >
 > [【Android】强大的SpannableStringBuilder](https://www.jianshu.com/p/f004300c6920)
 
-
-
-####15，不同语言单复数 getQuantityString()
+#### 15，不同语言单复数 getQuantityString()
 
 ```java
 textView.setText(getResources().getQuantityString(
@@ -322,7 +310,7 @@ textView.setText(getResources().getQuantityString(
 ```
 
 
-####16，ScrollView 嵌套 RecyclerView 时，自动显示到 RecyclerView 的位置
+#### 16，ScrollView 嵌套 RecyclerView 时，自动显示到 RecyclerView 的位置
 
 原理：
 1，ScrollView 会滑到获取焦点的子 view 的位置；
@@ -338,7 +326,7 @@ textView.setText(getResources().getQuantityString(
 >[android:focusableInTouchMode为什么能解决ScrollView自动滚动的原理分析](https://segmentfault.com/a/1190000011509975)
 
 
-####17，Log信息过长打印不全
+#### 17，Log信息过长打印不全
 
 ```java
 /**
@@ -362,7 +350,7 @@ textView.setText(getResources().getQuantityString(
 ```
 
 
-####18，打开联系人选择列表
+#### 18，打开联系人选择列表
 
 ```java
 @OnClick(R.id.iv_contact)
@@ -395,9 +383,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 ```
 打开的这个联系人选择界面是系统默认会提供的，通常这个界面被称为 Android Contact Picker 。并且该界面会列出所有有号码的联系人，包括一个联系人下有多个号码。
 
-
-
-####19，隐藏与显示软键盘
+#### 19，隐藏与显示软键盘
 
 ```java
 /**
@@ -424,7 +410,7 @@ public static void showSoftInput(View view) {
 >[Android 软键盘的显示和隐藏，这样操作就对了](https://segmentfault.com/a/1190000012279204)
 
 
-####20，禁止App字体大小随系统设置改变而改变
+#### 20，禁止App字体大小随系统设置改变而改变
 
 ```java
 private void banTextDisplaySize() {
@@ -438,11 +424,13 @@ private void banTextDisplaySize() {
 }
 ```
 
+​      
 
+​      
 
 
 欢迎提 Issues 😊
 
-
+​      
 
 © 著作权归作者所有，转载请联系作者获得授权。
