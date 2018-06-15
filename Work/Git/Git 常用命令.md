@@ -3,7 +3,8 @@
 #### 1，基础命令
 
 * git add (file_name)：把工作区要提交的所有修改(某个文件)放到暂存区（Stage）；
-* git commit：一次性把暂存区的所有修改提交到分支；
+* git commit -m "xxx"：一次性把暂存区的所有修改提交到分支；
+* git commit：可输入复杂的commit信息，Esc+:+wq 退出；
 * git status：查看文件修改状态； 
 * git diff：查看修改内容； (HEAD：当前版本，HEAD^：上一个版本；HEAD指向的就是当前分支；) 
 * git log：查看提交(commit)历史； 
@@ -48,3 +49,4 @@
 * git rebase --continue：在rebase时，如果出现冲突(conflict)，在解决完冲突后，用"git-add"命令更新这些内容的索引(index)，无需执行 git-commit，只要执行此命令； 
 * git rebase --abort：在任何时候，可以用--abort参数来终止rebase的行动，并且本地分支会回到rebase开始前的状态；  
 * git pull --rebase：git fetch + git rebase；
+* git cherry-pick commit_id：将另一commit再次提交到当前分支，然后直接push命令；
