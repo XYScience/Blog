@@ -1,8 +1,8 @@
 # Android 零碎知识
 
 #### 1，adb 隐藏系统栏 
-immersive.full：全屏
-immersive.status：隐藏状态栏
+immersive.full：全屏      
+immersive.status：隐藏状态栏   
 immersive.navigation：隐藏导航栏
 * 隐藏 App 导航栏
    ```
