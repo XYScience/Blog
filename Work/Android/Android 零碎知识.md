@@ -463,7 +463,15 @@ public class FixedAlterDialog extends AlertDialog {
         }
     }
 }
-```
+```    
+#### 21， clipToPadding 和 clipChildren     
+* clipToPadding    
+对于 padding 所占的尺寸大小也绘制其他的 item 的 view；    
+当我们为 ListView 等设置了 paddingTop 或 paddingBottom 的时候，当滑动到顶部和底部的时候，默认情况下 padding/margin 在滑动中一直存在，view 总是不能滑动到最底部和最顶部，设置 false 时列表滑动可占据 padding 的位置。    
+    
+* clipChildren    
+表示允许子 view 超越父布局的边界；且外，layout_gravity="bottom" ，告知系统要从底部向上绘制该子 view。    
+
 
 ​      
 
