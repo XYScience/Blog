@@ -412,15 +412,56 @@ public static void showSoftInput(View view) {
 
 #### 20，禁止App字体大小随系统设置改变而改变
 
-```java
-private void banTextDisplaySize() {
-    Configuration configuration = getResources().getConfiguration();
-    configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
-    DisplayMetrics metrics = new DisplayMetrics();
-    getWindowManager().getDefaultDisplay().getMetrics(metrics);
-    metrics.scaledDensity = configuration.fontScale * metrics.density;
-    configuration.densityDpi = (int) getResources().getDisplayMetrics().xdpi;
-    getResources().updateConfiguration(configuration, metrics);
+```java           
+// BaseActivity
+@Override
+protected void attachBaseContext(Context newBase) {
+    Context targetContext;
+    final Resources res = newBase.getResources();
+    final Configuration configuration = res.getConfiguration();
+    // 防止字体大小修改
+    configuration.fontScale = 1;
+    // 防止显示大小修改
+    DisplayMetrics displayMetrics = res.getDisplayMetrics();
+    final int densityStable;
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        densityStable = DisplayMetrics.DENSITY_DEVICE_STABLE;
+    } else {
+        Log.w(LOG_TAG, "SDK_INT < N, so can't get DENSITY_DEVICE_STABLE");
+        densityStable = 0;
+    }
+    configuration.densityDpi = densityStable > DisplayMetrics.DENSITY_MEDIUM ?
+            densityStable : UIUtil.getMaxDensityDpi(displayMetrics.widthPixels);
+    targetContext = newBase.createConfigurationContext(configuration);
+    super.attachBaseContext(targetContext);
+}
+// 弹框影响
+public class FixedAlterDialog extends AlertDialog {
+    protected FixedAlterDialog(Context context) {
+        super(context);
+    }
+    public static class Builder extends AlertDialog.Builder {
+        private Context mContext;
+        public Builder(Context context) {
+            super(context);
+            mContext = context;
+        }
+        @Override
+        public AlertDialog show() {
+            AlertDialog dialog = super.show();
+            WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+            if (windowManager != null) {
+                Display display = windowManager.getDefaultDisplay();
+                Window window = dialog.getWindow();
+                if (window != null) {
+                    WindowManager.LayoutParams lp = window.getAttributes();
+                    lp.width = display.getWidth();
+                    dialog.getWindow().setAttributes(lp);
+                }
+            }
+            return dialog;
+        }
+    }
 }
 ```
 
