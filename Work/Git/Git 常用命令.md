@@ -17,7 +17,8 @@
 * git checkout -f：直接丢弃工作区所有文件的修改； 
 * git reset HEAD file：把暂存区的某个文件修改回退到工作区； 
 * git reset HEAD . ：把暂存区所有文件回退到工作区； 
-* git reset --hard commit_id／HEAD^：回退版本（本地仓库覆盖工作区）；
+* git reset --hard commit_id／HEAD^：回退版本（本地仓库覆盖工作区）；    
+* git reflog：用来记录每一次命令；
 
 #### 3，分支管理
 
