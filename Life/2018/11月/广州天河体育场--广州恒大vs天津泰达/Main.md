@@ -2,13 +2,13 @@
 
 #### 1，赛事
 
-**时间：**2018--11--11 15:00；
+**时间：** 2018--11--11 15:00；
 
-**地点：**广州天河体育中心；
+**地点：** 广州天河体育中心；
 
-**赛果：**5:1；
+**赛果：** 5:1；
 
-**伙伴：**华明及其同学；
+**伙伴：** 华明及其同学；
 
 #### 2，总结
 
@@ -28,4 +28,4 @@
 
 ![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/you_are_the_best.jpg)
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/thanks.png)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/Screenshot_20181111-165851~2.png)
