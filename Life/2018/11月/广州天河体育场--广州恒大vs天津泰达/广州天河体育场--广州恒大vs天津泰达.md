@@ -21,3 +21,11 @@
 这次观战，心情却是平静许多（也许观看多次已成习惯，也许丢冠后的失落感），但心底还是希望能够拿下比赛，为这个不完整的赛季画上句号，来年再战。整个过程都是无比认真地观看比赛，5个进球，每个进球还是一如既往的激动。特别是最后一个进球，塔利斯卡无私助攻19岁小将王进泽进球，进球后的亲吻草地，心里有种说不出的感觉，希望以后恒大的小将能够接班继续王朝🏆。
 
 最后散场其实是第一次给球员谢场助威（之前由于都要赶车。。）近距离观看球员，加油，希望下个赛季拿回冠军🏆，you are the best！广州未赢够！
+
+
+
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/panorama.jpg)
+
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/you_are_the_best.jpg)
+
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/thanks.png)
