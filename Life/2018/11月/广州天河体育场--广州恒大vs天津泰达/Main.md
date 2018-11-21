@@ -24,8 +24,8 @@
 
 
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/panorama.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Photo/panorama.jpg)
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/you_are_the_best.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Photo/you_are_the_best.jpg)
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Screenshot/thanks.png)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/广州天河体育场--广州恒大vs天津泰达/Photo/thanks.png)
