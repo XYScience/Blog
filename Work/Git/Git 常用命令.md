@@ -1,4 +1,13 @@
-# Git 常用命令
+# Git 常用命令    
+      
+#### 0，新建仓库      
+本地公钥复制到 GitHub 配置 ssh （Mac 公钥：Users/xxx/.ssh/id_rsa.pub，.ssh隐藏目录显示：shift+command+.）     
+ssh -T git@github.com 判断是否绑定成功     
+* git init     
+* git add xxx.md     
+* git commit -m "first commit"     
+* git remote add origin git@github.com:XYScience/xxx.git     
+* git push -u origin master     
 
 #### 1，基础命令
 
