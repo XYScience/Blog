@@ -1,4 +1,14 @@
-# Git 常用命令
+# Git 常用命令    
+      
+#### 0，新建仓库      
+本地公钥复制到 GitHub 配置 ssh （Mac 公钥：Users/xxx/.ssh/id_rsa.pub，.ssh隐藏目录显示：shift+command+.）     
+ssh -T git@github.com 判断是否绑定成功     
+* git init     
+* git add xxx.md     
+* git commit -m "first commit"     
+* git remote add origin git@github.com:XYScience/xxx.git     
+* git push -u origin master (-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令)     
+* git push origin master     
 
 #### 1，基础命令
 
@@ -31,7 +41,8 @@
 * git branch -a：查看所有分支；  
 
 * git branch -vv：查看本地跟踪远程分支； 
-* git branch -u origin/name_branch：当前分支跟踪远程分支； 
+* git branch -u origin/name_branch：当前分支跟踪远程分支；    
+* git checkout -b name_branch origin/name_branch：拉取远程分支并创建切换本地分支；     
 
 #### 4，工作现场
 
