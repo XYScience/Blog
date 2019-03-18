@@ -8,9 +8,7 @@
 
 ![image](https://github.com/XYScience/Blog/raw/master/Life/2019/3月/03.17--香港青衣径/Photos/qingma_bridge.jpg)
 
-<video id="video" controls="" preload="none" poster="https://github.com/XYScience/Blog/raw/master/Life/2019/3月/03.17--香港青衣径/Photos/review.png">
-   <source id="mp4" src="https://github.com/XYScience/Blog/raw/master/Life/2019/3月/03.17--香港青衣径/Photos/route_map.mp4" type="video/mp4">
-</video>
+[![Watch the video](https://github.com/XYScience/Blog/raw/master/Life/2019/3月/03.17--香港青衣径/Photos/review.png)](https://youtu.be/Ry03IULRAI)
 
 
 
