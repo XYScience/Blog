@@ -16,25 +16,25 @@
 
 三点半出发，4点多才到龙珠门上山口（其实有点迟了）。还是一如既往的不停歇的往上走，不过有一个多月没有爬过山，感觉气喘吁吁，大汗淋漓，不过最终还是和以前一样，半小时就到山顶极目亭了，这段路人还是不少的，毕竟这是最常的爬山路段。在极目亭停了一会后，就直接出发往东走了，往东只有一条路，这是爬好多次以来第一次走下去。一路上人数极少，看到的人的装备真的是来走远足径的（我居然没有一身运动装和只带半瓶水就往这边出发了😂）。一路上不怎么停过，至少上下三座山头，而且隔一段距离就有一个小亭子工人在建筑，脚下的石阶也看得出是正在铺设的。路边也看到了远足径的标注（听同事说，这是仿制香港麦理浩径😂）：
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/深圳塘朗山远足/Photo/hiking_mark.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/11.04--深圳塘朗山远足/Photos/hiking_mark.jpg)
 
 大约走了1个多小时，就到了一个分叉口，左边是往梅林水库，右边是莲花山方向，其实也是这次去的目的地凭栏观海。往右走，人越来越少（其实也是到傍晚了），然后居然遇到一个警告牌：此路段发生过抢劫事件，这个点，心里不禁一冷😂：
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/深圳塘朗山远足/Photo/warning.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/11.04--深圳塘朗山远足/Photos/warning.jpg)
 
 不过看地图显示也快到目的地了，而且前面也有几个人也往这边来，于是加快脚步，快速前进。走没多久，对着地图，显示终于在凭栏观海，不过看了周围，和路上其他地方并没什么区别，连个亭子都没有，更别说观海了😂：
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/深圳塘朗山远足/Photo/凭栏观海.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/11.04--深圳塘朗山远足/Photos/凭栏观海.jpg)
 
 挺失望的😂😂😂。
 
 因为对前面不熟悉，于是决定往回走回极目亭（前面说的分岔路显示走回要两个小时），此时已经快6点了，也是日落的时间，于是加快了脚步，走了大半路都没停下来过，从日落到黄昏，再到黑夜暗下来，路上只遇到一个人，心里还是有点小怕😂。剩下大约五分之一路程到极目亭，隐约看到前面也有一个人在打着灯，这时候才停下来休息一会，回来的路上没喝一滴水（当时来爬居然没有考虑到这个😂）。走了一段时间，终于到达极目亭，此时这里还有不少人，后海方向，也早已灯火通明：
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/深圳塘朗山远足/Photo/night_scene.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/11.04--深圳塘朗山远足/Photos/night_scene.jpg)
 
 休息十多分钟后，就直接下山回家了，买点香蕉补充下能量🍌，脚好疼😂。
 
 算算这次远足，也走走爬爬14公里（真的没想到走那么远，应该背上书包备多一瓶水和香蕉补充体力）：
 
-![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/深圳塘朗山远足/Photo/map_path.jpg)
+![image](https://github.com/XYScience/Blog/raw/master/Life/2018/11月/11.04--深圳塘朗山远足/Photos/map_path.jpg)
 
