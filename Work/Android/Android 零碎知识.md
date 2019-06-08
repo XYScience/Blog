@@ -69,10 +69,12 @@ activity.setTaskDescription(td);
 ```java
 // Android 5.0+ 全屏显示 
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-   // <item name="windowActionBar">false</item> & <item name="windowNoTitle">true</item>
+   // <item name="windowActionBar">false</item> & <item name="windowNoTitle">true</item>     
+   // android:fitsSystemWindows="false"
    supportActionBar?.hide()
-   decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-   window.statusBarColor = getColor(android.R.color.transparent) 
+   decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN  or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION   
+   window.statusBarColor = Color.TRANSPARENT    
+   window.navigationBarColor = Color.TRANSPARENT
 }
 // Android 6.0+ 灰色状态栏图标
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
