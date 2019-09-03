@@ -553,6 +553,15 @@ for (int i = 0; i <= 100; i++) {
       hexStr = "0" + hexStr;
    System.out.println(i + "%, " + hexStr.toUpperCase());
 }     
+```    
+#### 22，Webview 设置背景颜色     
+```   
+<WebView
+   android:id="@+id/webView"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"/>   
+    
+webView.setBackgroundColor(Color.parseColor("#000000"));    
 ```
 
 
