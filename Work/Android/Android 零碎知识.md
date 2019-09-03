@@ -561,7 +561,8 @@ for (int i = 0; i <= 100; i++) {
    android:layout_width="match_parent"
    android:layout_height="match_parent"/>   
     
-webView.setBackgroundColor(Color.parseColor("#000000"));    
+webView.setBackgroundColor(Color.parseColor("#000000")); //设置背景为黑色    
+webView.setBackgroundColor(Color.parseColor("#00000000")); //设置背景为透明，适配OPPO暗色模式闪白屏    
 ```
 
 
