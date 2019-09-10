@@ -564,8 +564,102 @@ for (int i = 0; i <= 100; i++) {
 webView.setBackgroundColor(Color.parseColor("#000000")); //设置背景为黑色    
 webView.setBackgroundColor(Color.parseColor("#00000000")); //设置背景为透明，适配OPPO暗色模式闪白屏    
 ```
+#### 23，Navigation + Fragment 导航组件状态保存         
+```   
+class StateNavHostFragment: NavHostFragment() {
+    override fun createFragmentNavigator(): Navigator<out FragmentNavigator.Destination> {
+        return StateNavigator(requireContext(), childFragmentManager, id, true)
+    }
 
+    //参考相关链接
+    // https://stackoverflow.com/questions/50485988/is-there-a-way-to-keep-fragment-alive-when-using-bottomnavigationview-with-new-n/51684125
+    // https://www.jianshu.com/p/ebd2f6d7a349
+    @Navigator.Name("tab_fragment")
+    open class StateNavigator(var mContext: Context, var mFragmentManager: FragmentManager, var mContainerId: Int, var first: Boolean) :
+        FragmentNavigator(mContext, mFragmentManager, mContainerId) {
+        override fun navigate(
+            destination: Destination,
+            args: Bundle?,
+            navOptions: NavOptions?,
+            navigatorExtras: Navigator.Extras?
+        ): NavDestination? {
+            val TAG = "StateNavigator"
+            try {
+                // 反射获取mBackStack
+                val mBackStackField = FragmentNavigator::class.java.getDeclaredField("mBackStack")
+                mBackStackField.isAccessible = true
+                val mBackStack: ArrayDeque<Int> = mBackStackField.get(this) as ArrayDeque<Int>
+                //反射获取mBackStack
+                Log.e(">>>>>", "mBackStack: $mBackStack")
 
+                if (mFragmentManager.isStateSaved) {
+                    Log.i(
+                        TAG,
+                        "Ignoring navigate() call: FragmentManager has already" + " saved its state"
+                    )
+                    return null
+                }
+                var className = destination.className
+                if (className[0] == '.') {
+                    className = mContext.packageName + className
+                }
+
+                val ft = mFragmentManager.beginTransaction()
+
+                var enterAnim = navOptions?.enterAnim ?: -1
+                var exitAnim = navOptions?.exitAnim ?: -1
+                var popEnterAnim = navOptions?.popEnterAnim ?: -1
+                var popExitAnim = navOptions?.popExitAnim ?: -1
+                if (enterAnim != -1 || exitAnim != -1 || popEnterAnim != -1 || popExitAnim != -1) {
+                    enterAnim = if (enterAnim != -1) enterAnim else 0
+                    exitAnim = if (exitAnim != -1) exitAnim else 0
+                    popEnterAnim = if (popEnterAnim != -1) popEnterAnim else 0
+                    popExitAnim = if (popExitAnim != -1) popExitAnim else 0
+                    ft.setCustomAnimations(enterAnim, exitAnim, popEnterAnim, popExitAnim)
+                }
+
+                // ft.replace(mContainerId, frag)
+                // saved fragment state; base on FragmentNavigator
+                val tag = destination.id.toString()
+
+                val currentFragment = mFragmentManager.primaryNavigationFragment
+                if (currentFragment != null) {
+                    ft.hide(currentFragment)
+                }
+
+                var fragment = mFragmentManager.findFragmentByTag(tag)
+                if (fragment == null) {
+                    fragment = mFragmentManager.fragmentFactory.instantiate(
+                        mContext.classLoader, className
+                    )
+                    fragment.arguments = args
+                    ft.add(mContainerId, fragment, tag)
+                } else {
+                    ft.show(fragment)
+                }
+
+                ft.setPrimaryNavigationFragment(fragment)
+
+                @IdRes val destId = destination.id
+                ft.setReorderingAllowed(true)
+                ft.commit()
+                // The commit succeeded, update our view of the world
+                return if (first) {
+                    first = false
+                    mBackStack.add(destId)
+                    destination
+                } else {
+                    null
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Exception: $e")
+                return super.navigate(destination, args, navOptions, navigatorExtras)
+            }
+        }
+    }
+}  
+```
+       
 ​      
 
 ​      
