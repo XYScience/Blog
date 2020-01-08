@@ -17,7 +17,8 @@ ssh -T git@github.com 判断是否绑定成功
 * git commit：可输入复杂的commit信息，Esc+:+wq 退出；
 * git status：查看文件修改状态； 
 * git diff：查看修改内容； (HEAD：当前版本，HEAD^：上一个版本；HEAD指向的就是当前分支；) 
-* git log：查看提交(commit)历史； 
+* git log：查看提交(commit)历史；   
+* git log --oneline：快速的浏览具体的提交信息；    
 * git reflog：查看提交(包括撤销回退)历史； 
 * git log --graph：看到分支合并图； 
 
