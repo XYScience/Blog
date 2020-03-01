@@ -47,7 +47,8 @@ ssh -T git@github.com 判断是否绑定成功
 
 #### 4，工作现场
 
-* git stash：把暂缓区现场“储藏”起来，等以后恢复现场后继续工作； 
+* git stash：把暂缓区现场“储藏”起来，等以后恢复现场后继续工作；       
+* git stash save "message"：指定 stash 信息；      
 * git stash list：查看已经储藏的工作现场； 
 * git stash pop：恢复工作现场的同时把stash内容也删除； 
 * git stash apply stash@{0}：恢复指定的stash； 
