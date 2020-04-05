@@ -658,6 +658,13 @@ class StateNavHostFragment: NavHostFragment() {
         }
     }
 }  
+```      
+#### 24，图片灰度      
+```      
+val matrix = ColorMatrix()
+matrix.setSaturation(1f)  // 0f: 灰度   1f: 原图
+val cmcf = ColorMatrixColorFilter(matrix)
+image.colorFilter = cmcf
 ```
        
 ​      
