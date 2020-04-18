@@ -78,16 +78,27 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 }
 // Android 6.0+ 灰色状态栏图标
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-   var suv = decorView.systemUiVisibility 
-   suv = suv or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-   decorView.systemUiVisibility =  suv
+   var suv = decorView.systemUiVisibility    
+   // 灰色图标    
+   suv = suv or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR   
+   // 白色图标   
+   val visL = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR   
+   suv = suv and visL.inv()   
+      
+   decorView.systemUiVisibility =  suv   
 }
 // Android 8.0+ 亮色导航栏
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
    var suv = decorView.systemUiVisibility
-   suv = suv or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-   decorView.systemUiVisibility = suv
-   window.navigationBarColor = getColor(android.R.color.transparent)
+   // 灰色图标   
+   suv = suv or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR    
+   window.navigationBarColor = getColor(android.R.color.transparent)   
+   // 白色图标    
+   val visL = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR   
+   suv = suv and visL.inv()   
+   window.navigationBarColor = getColor(android.R.color.black)   
+   
+   decorView.systemUiVisibility = suv   
 }
 //诺基亚Rom
 getWindow().setNavigationBarColor(ContextCompat.getColor(this, android.R.color.white));
