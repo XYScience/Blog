@@ -109,6 +109,18 @@ getWindow().setNavigationBarColor(ContextCompat.getColor(this, android.R.color.w
 5, navigationBarDividerColor (API level 27)
    setNavigationBarDividerColor (API level P)      
 ```     
+```
+解决 BottomSheetDialog 导航栏变灰    
+<style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+   <item name="android:windowIsFloating">false</item>
+   <item name="android:statusBarColor">@android:color/transparent</item>
+   <item name="android:navigationBarColor">@android:color/white</item>
+   <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+</style>
+<style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+   <item name="android:background">@android:color/transparent</item>
+</style>
+```
 ```java    
 /**
  * Created by xiaoyanger on 2017/3/1.
