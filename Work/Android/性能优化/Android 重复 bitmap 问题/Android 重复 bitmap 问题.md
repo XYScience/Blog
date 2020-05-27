@@ -4,9 +4,8 @@
 
 重复 bitmap 问题，即有两条不同的 重复bitmap 引用链；
 
-![1](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/1.jpg)
-
-![2](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/2.jpg)
+![1](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/1.jpg)      
+![2](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/2.jpg)
 
 #### 使用工具分析
 
@@ -36,7 +35,7 @@
 
 * 过滤 bitmap 实例
 
-  ![3](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/3.jpg)
+  ![3](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/3.jpg)
 
   对比发现存在多个 bitmap 实例 buffer 内容完全一样；
 
@@ -48,20 +47,20 @@
 
   根据引用链分析 bitmap 的引用情况，结合源码分析生成多个 bitmap 实例的原因和优化方案；
   
-  ![4](https://github.com/XYScience/Blog/raw/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/4.jpg)
+  ![4](https://github.com/XYScience/Blog/raw/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/4.jpg)
   
-  ![5](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/5.jpg)
+  ![5](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/5.jpg)
 
 ##### 4，手动导出图片
 
 * 导出图片的 buffer 信息，文件名如：3383d190.data
 
-  ![6](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/6.jpg)
+  ![6](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/6.jpg)
 
 * 得到该 bitmap 实例对于的原始图片
 
-  ![7](https://github.com/XYScience/Blog/raw/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/7.jpg)
+  ![7](https://raw.githubusercontent.com/XYScience/Blog/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/7.jpg)
 
-  ![8](https://github.com/XYScience/Blog/raw/master/Work/Android/性能优化/Android 重复 bitmap 问题/images/8.jpg)
+  ![8](https://github.com/XYScience/Blog/raw/master/Work/Android/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Android%20%E9%87%8D%E5%A4%8D%20bitmap%20%E9%97%AE%E9%A2%98/images/8.jpg)
 
   
