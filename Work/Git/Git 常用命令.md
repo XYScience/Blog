@@ -64,4 +64,5 @@ ssh -T git@github.com 判断是否绑定成功
 * git rebase --continue：在rebase时，如果出现冲突(conflict)，在解决完冲突后，用"git-add"命令更新这些内容的索引(index)，无需执行 git-commit，只要执行此命令； 
 * git rebase --abort：在任何时候，可以用--abort参数来终止rebase的行动，并且本地分支会回到rebase开始前的状态；  
 * git pull --rebase：git fetch + git rebase；
-* git cherry-pick commit_id：将另一commit再次提交到当前分支，然后直接push命令；
+* git cherry-pick commit_id：将另一commit再次提交到当前分支，然后直接push命令；    
+* git clone --branch android-cts-10.0_r7 https://android.googlesource.com/platform/frameworks/base.git --depth 1：选择 10.0 的 tag 分支，--depth 表示深度，这里选择 1 表示之下最新的一层，不会下载过多的提交记录；
