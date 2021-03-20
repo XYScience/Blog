@@ -8,7 +8,8 @@ ssh -T git@github.com 判断是否绑定成功
 * git commit -m "first commit"     
 * git remote add origin git@github.com:XYScience/xxx.git     
 * git push -u origin master (-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令)     
-* git push origin master     
+* git push origin master  
+* git push origin 分支 --force：强制覆盖远程分支        
 
 #### 1，基础命令
 
