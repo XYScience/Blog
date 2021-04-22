@@ -22,9 +22,23 @@ ssh -T git@github.com 判断是否绑定成功
 * git log：查看提交(commit)历史；   
 * git log --oneline：快速的浏览具体的提交信息；    
 * git reflog：查看提交(包括撤销回退)历史； 
-* git log --graph：看到分支合并图； 
-
-#### 2，代码回退
+* git log --graph：看到分支合并图；    
+    
+#### 2，合并两个提交    
+* git rebase -i HEAD~2    
+* 对第二行(第二笔）第一个单词 pick 改为 s    
+* Esc+: ，输入 wq 回车    
+* 编辑更改 commit 信息    
+    
+#### 3，当前提交到某个 commit 里    
+* git rebase <提交到某个 commit 的父 commit> --interactive    
+* 将需要提交到某个 commit 前面的 pick 改为 edit，Esc+:+wq 保存    
+* 更改文件    
+* git add 文件    
+* git commit --amend    
+* git rebase --continue 完成提交到某个 commit    
+    
+#### 4，代码回退
 
 * git checkout -- file_name：直接丢弃工作区某个文件的修改； 
 * git checkout -f：直接丢弃工作区所有文件的修改； 
@@ -33,7 +47,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git reset --hard commit_id／HEAD^：回退版本（本地仓库覆盖工作区）；    
 * git reflog：用来记录每一次命令；
 
-#### 3，分支管理
+#### 5，分支管理
 
 * git branch name_branch：创建分支； 
 * git checkout name_branch：切换分支； 
@@ -47,7 +61,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git branch -u origin/name_branch：当前分支跟踪远程分支；    
 * git checkout -b name_branch origin/name_branch：拉取远程分支并创建切换本地分支；     
 
-#### 4，工作现场
+#### 6，工作现场
 
 * git stash：把暂缓区现场“储藏”起来，等以后恢复现场后继续工作；       
 * git stash save "message"：指定 stash 信息；      
@@ -56,7 +70,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git stash apply stash@{0}：恢复指定的stash； 
 * git stash drop stash@{0}：删除指定的stash；
 
-#### 5，拉取远程分支
+#### 7，拉取远程分支
 
 * git fetch：从远程拉取代码到本地； 
 * git merge name_branch：合并某分支到当前分支；
