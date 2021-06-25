@@ -23,6 +23,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git log --oneline：快速的浏览具体的提交信息；    
 * git reflog：查看提交(包括撤销回退)历史； 
 * git log --graph：看到分支合并图；    
+* git reflog：用来记录每一次命令；   
     
 #### 2，合并两个提交    
 * git rebase -i HEAD~2    
@@ -45,7 +46,6 @@ ssh -T git@github.com 判断是否绑定成功
 * git reset HEAD file：把暂存区的某个文件修改回退到工作区； 
 * git reset HEAD . ：把暂存区所有文件回退到工作区； 
 * git reset --hard commit_id／HEAD^：回退版本（本地仓库覆盖工作区）；    
-* git reflog：用来记录每一次命令；
 
 #### 5，分支管理
 
