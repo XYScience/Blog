@@ -688,7 +688,17 @@ val matrix = ColorMatrix()
 matrix.setSaturation(1f)  // 0f: 灰度   1f: 原图
 val cmcf = ColorMatrixColorFilter(matrix)
 image.colorFilter = cmcf
+```      
+#### 25，多个 Activity startActivityForResult 返回数据      
+三个 Activity，A startActivityForResult 启动 B，B startActivity 启动 C 然后 finish()，C setResult finish() 后，A 无法获得返回的 result。      
+B 启动 C 时，添加Intent.FLAG_ACTIVITY_FORWARD_RESULTFlag，这样当 C setResult finish() 后，就可以触发 A 的 onActivityResult 回调了：    
+```     
+Intent intentC = new Intent(..., CActivity.class);
+intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+startActivity(intent);
+finish();    
 ```
+
        
 ​      
 
