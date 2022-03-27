@@ -17,6 +17,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git commit -m "xxx"：一次性把暂存区的所有修改提交到分支；
 * git commit：可输入复杂的commit信息，Esc+:+wq 退出；  
 * git commit --amend：已经 commit 的提交，未上传远程仓库时，可追加在当前 commit 的修改；    
+* git commit --amend --author="username <email>"：修改作者、邮箱。    
 * git status：查看文件修改状态； 
 * git diff：查看修改内容； (HEAD：当前版本，HEAD^：上一个版本；HEAD指向的就是当前分支；) 
 * git log：查看提交(commit)历史；   
