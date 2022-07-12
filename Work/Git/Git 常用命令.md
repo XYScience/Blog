@@ -97,3 +97,8 @@ ssh -T git@github.com 判断是否绑定成功
 #### 9，编译打包    
 * ext.revisionDescriptionCMD = 'git rev-parse --short HEAD'     
 ext.revisionDescription = revisionDescriptionCMD.execute().getText().trim()    
+      
+#### 10，统计    
+* find . "(" -name "*.java" ")" -print | xargs wc -l  // 统计总行数    
+* git log --author="SScience\|chentushen" --since=1.years --oneline | wc -l  // 统计提交次数（ \| 或 ）    
+* git log  --author="SScience" --since=1.years  --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -  // 统计提交行数    
