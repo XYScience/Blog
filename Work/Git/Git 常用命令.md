@@ -49,7 +49,15 @@ ssh -T git@github.com 判断是否绑定成功
 * git commit --amend    
 * git rebase --continue 完成提交到某个 commit    
     
-#### 5，代码回退
+#### 5，忽略已 commit 的文件    
+* touch .gitignore  // 创建 .gitignore    
+* open .gitignore    
+* 输入要忽略文件：UserInterfaceState.xcuserstate    
+* 提交 commit    
+* git rm --cached UserInterfaceState.xcuserstate  // 忽略文件     
+* 提交 commit    
+      
+#### 6，代码回退
 
 * git checkout -- file_name：直接丢弃工作区某个文件的修改； 
 * git checkout -f：直接丢弃工作区所有文件的修改； 
@@ -57,7 +65,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git reset HEAD . ：把暂存区所有文件回退到工作区； 
 * git reset --hard commit_id／HEAD^：回退版本（本地仓库覆盖工作区）；    
 
-#### 6，分支管理
+#### 7，分支管理
 
 * git branch name_branch：创建分支； 
 * git checkout name_branch：切换分支； 
@@ -70,7 +78,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git branch -u origin/name_branch：当前分支跟踪远程分支；    
 * git checkout -b name_branch origin/name_branch：拉取远程分支并创建切换本地分支；     
 
-#### 7，工作现场
+#### 8，工作现场
 
 * git stash：把暂缓区现场“储藏”起来，等以后恢复现场后继续工作；       
 * git stash save "message"：指定 stash 信息；      
@@ -79,7 +87,7 @@ ssh -T git@github.com 判断是否绑定成功
 * git stash apply stash@{0}：恢复指定的stash； 
 * git stash drop stash@{0}：删除指定的stash；
 
-#### 8，远程分支
+#### 9，远程分支
 
 * git fetch：从远程拉取代码到本地； 
 * git merge name_branch：合并某分支到当前分支；
@@ -94,11 +102,11 @@ ssh -T git@github.com 判断是否绑定成功
 * git remote set-url origin git@github.com:xxx/xxx.git：修改远程地址；   
 * git push --set-upstream origin xxx：推送本地分支到远程；   
      
-#### 9，编译打包    
+#### 10，编译打包    
 * ext.revisionDescriptionCMD = 'git rev-parse --short HEAD'     
 ext.revisionDescription = revisionDescriptionCMD.execute().getText().trim()    
       
-#### 10，统计    
+#### 11，统计    
 * find . "(" -name "*.java" ")" -print | xargs wc -l  （统计总行数）    
 * git log --author="SScience\|chentushen" --since=1.years --oneline | wc -l  （统计提交次数）    
 * git log  --author="SScience" --since=1.years  --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s, removed lines: %s, total lines: %s\n", add, subs, loc }' -  （统计提交行数）    
