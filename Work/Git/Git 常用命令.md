@@ -76,7 +76,8 @@ ssh -T git@github.com 判断是否绑定成功
 * git branch -a：查看所有分支；  
 * git branch -vv：查看本地跟踪远程分支； 
 * git branch -u origin/name_branch：当前分支跟踪远程分支；    
-* git checkout -b name_branch origin/name_branch：拉取远程分支并创建切换本地分支；     
+* git checkout -b name_branch origin/name_branch：拉取远程分支并创建切换本地分支；
+* git remote set-url origin https://token@github.com/redteamobile/Columbus.git：切换远程分支     
 
 #### 8，工作现场
 
