@@ -99,7 +99,10 @@ ssh -T git@github.com 判断是否绑定成功
 * git pull --rebase：git fetch + git rebase；
 * git cherry-pick commit_id：将另一commit再次提交到当前分支，然后直接push命令；  
 * git cherry-pick commitid1..commitid100：(commitid1..commitid100]，多个commit；    
-* git clone --branch android-cts-10.0_r7 https://android.googlesource.com/platform/frameworks/base.git --depth 1：选择 10.0 的 tag 分支，--depth 表示深度，这里选择 1 表示之下最新的一层，不会下载过多的提交记录；    
+* git clone --branch android-cts-10.0_r7 https://android.googlesource.com/platform/frameworks/base.git --depth 1：选择 10.0 的 tag 分支，--depth 表示深度，这里选择 1 表示之下最新的一层，不会下载过多的提交记录；     
+* git pull --unshallow  // 恢复当前分支成完整版代码库     
+* git config remote.origin.fetch "+refs/heads/branch_my:refs/remotes/origin/branch_my"   // 拉取指定分支 commit     
+* git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"  // 拉取全部分支 commit     
 * git remote set-url origin git@github.com:xxx/xxx.git：修改远程地址；   
 * git push --set-upstream origin xxx：推送本地分支到远程；   
      
